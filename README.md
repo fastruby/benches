@@ -32,11 +32,16 @@ and compare the performance using `benchmark-ips`:
 
 Here it the result:
 
-$ ruby benchmarks/struct_vs_hash.rb
-Ruby version: 2.3.3
-Warming up --------------------------------------
-              struct    20.863k i/100ms
-                hash     4.222k i/100ms
-Calculating -------------------------------------
-              struct    225.122k (± 3.9%) i/s -      1.127M in   5.013067s
-                hash     43.546k (± 4.6%) i/s -    219.544k in   5.053637s
+    $ ruby benchmarks/struct_vs_hash.rb
+    Ruby version: 2.3.3
+    Warming up --------------------------------------
+                  struct    20.863k i/100ms
+                    hash     4.222k i/100ms
+    Calculating -------------------------------------
+                  struct    225.122k (± 3.9%) i/s -      1.127M in   5.013067s
+                    hash     43.546k (± 4.6%) i/s -    219.544k in   5.053637s
+
+## Guidelines
+
+Feel free to add more benchmark files in this project. The blocks which are
+being compared should be simple and straightforward.
