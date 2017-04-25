@@ -18,4 +18,6 @@ Benchmark.ips do |x|
       str[:number]
     end
   end
+
+  x.compare!
 end
