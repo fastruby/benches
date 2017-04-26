@@ -6,9 +6,7 @@ Benchmark.ips do |x|
   OBJECT = "nil".freeze
 
   x.report("unless nil") do
-    20.times do
-      true unless OBJECT.nil?
-    end
+    true unless OBJECT.nil?
   end
 
   x.report("if object") do
