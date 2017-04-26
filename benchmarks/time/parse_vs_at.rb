@@ -1,5 +1,6 @@
 require 'benchmark/ips'
 require 'time'
+require 'active_support/core_ext/time'
 
 puts "Ruby version: #{RUBY_VERSION}"
 
