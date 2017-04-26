@@ -123,6 +123,29 @@ Here is the result:
            if object: 11431148.2 i/s
           unless nil:  9435226.8 i/s - 1.21x  slower
 
+## Rails Benchmarks
+
+What about Rails-specific code? Let's do some benchmarks comparing different
+ways to achieve the same result.
+
+## map vs. pluck
+
+What's fastest `map` or `pluck`?
+
+Here is the result:
+
+    $ bundle exec rake benches:pluck_vs_map
+    Warming up --------------------------------------
+               map(&:id)    18.000  i/100ms
+              pluck(:id)   107.000  i/100ms
+    Calculating -------------------------------------
+               map(&:id)    193.198  (±12.9%) i/s -    954.000  in   5.024860s
+              pluck(:id)      1.056k (± 5.0%) i/s -      5.350k in   5.082911s
+
+    Comparison:
+              pluck(:id):     1055.8 i/s
+               map(&:id):      193.2 i/s - 5.47x  slower
+
 
 ## Guidelines
 
