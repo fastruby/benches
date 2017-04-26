@@ -6,13 +6,17 @@ Benchmark.ips do |x|
   Phone = Struct.new(:number)
 
   x.report("struct") do
-    str = Phone.new(i)
-    str.number
+    20.times do |i|
+      str = Phone.new(i)
+      str.number
+    end
   end
 
   x.report("hash") do
-    str = Hash.new(number: i)
-    str[:number]
+    20.times do |i|
+      str = Hash.new(number: i)
+      str[:number]
+    end
   end
 
   x.compare!
