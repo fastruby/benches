@@ -113,15 +113,15 @@ Here is the result:
     $ bundle exec ruby benchmarks/unless_nil_vs_if_object.rb
     Ruby version: 2.3.3
     Warming up --------------------------------------
-          unless nil    59.338k i/100ms
-           if object   253.768k i/100ms
+          unless nil   251.994k i/100ms
+           if object   267.552k i/100ms
     Calculating -------------------------------------
-          unless nil    721.046k (± 4.4%) i/s -      3.620M in   5.030380s
-           if object     11.031M (± 7.0%) i/s -     55.068M in   5.018289s
+          unless nil      9.435M (± 6.9%) i/s -     47.123M in   5.021124s
+           if object     11.431M (± 4.9%) i/s -     57.256M in   5.021363s
 
     Comparison:
-           if object: 11030820.4 i/s
-          unless nil:   721045.8 i/s - 15.30x  slower
+           if object: 11431148.2 i/s
+          unless nil:  9435226.8 i/s - 1.21x  slower
 
 
 ## Guidelines
