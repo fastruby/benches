@@ -2,6 +2,18 @@
 
 A collection of Ruby benchmarks for fun and for the [Ombu Labs blog](https://www.ombulabs.com/blog)
 
+## Setup
+
+You can get the project locally setup with this command:
+
+    ./bin/setup
+
+## Run
+
+You can run all benchmarks with this command:
+
+    bundle exec rake
+
 ## Struct vs Hash
 
 What's most efficient? A Struct or a Hash? Let's create one of each, access them,
