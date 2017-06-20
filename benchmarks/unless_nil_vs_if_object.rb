@@ -2,16 +2,22 @@ require 'benchmark/ips'
 
 puts "Ruby version: #{RUBY_VERSION}"
 
-Benchmark.ips do |x|
-  OBJECT = "nil".freeze
+objects = ["foobar", nil, 89, 99.0].freeze
 
-  x.report("unless nil") do
-    true unless OBJECT.nil?
+objects.each do |object|
+  puts "Testing with #{object.class}"
+
+  Benchmark.ips do |x|
+    x.report("unless nil") do
+      true unless object.nil?
+    end
+
+    x.report("if object") do
+      true if object
+    end
+
+    x.compare!
   end
 
-  x.report("if object") do
-    true if OBJECT
-  end
-
-  x.compare!
+  puts "done"
 end
