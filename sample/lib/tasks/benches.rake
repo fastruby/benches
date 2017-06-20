@@ -2,6 +2,30 @@ require 'benchmark/ips'
 require 'ffaker'
 
 namespace :benches do
+  task all: [:exists_vs_any, :pluck_vs_map]
+
+  task not_blank_vs_present: :environment do
+    objects = ["foobar", nil, 89, 99.0].freeze
+
+    objects.each do |object|
+      puts "Testing with #{object.class}"
+
+      Benchmark.ips do |x|
+        x.report("!blank?") do
+          !object.blank?
+        end
+
+        x.report("present?") do
+          object.present?
+        end
+
+        x.compare!
+      end
+
+      puts "done"
+    end
+  end
+
   task exists_vs_any: :environment do
     100.times do
       Post.create(title: FFaker::Name.name)
